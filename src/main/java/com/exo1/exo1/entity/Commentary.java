@@ -4,6 +4,8 @@ package com.exo1.exo1.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Timestamp;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -20,6 +22,7 @@ public class Commentary {
     private String content;
     private Float rate;
 
+
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "author_user_id")
     private Users author;
@@ -27,4 +30,6 @@ public class Commentary {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private Users user;
+
+    private Timestamp created;
 }

@@ -19,10 +19,10 @@ public class ComplementUnderType {
     private String name;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "complemtUnderType")
+    @JoinColumn(name = "complement_type_id")
     private ComplementType complementType;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "complementUnderType")
+    @JoinColumn(name = "party_type_id")
     private PartyType partyType;
 }
